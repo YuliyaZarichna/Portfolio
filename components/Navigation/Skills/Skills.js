@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const skills = () => {
     return (
-        <Link href="/Skills" >
+        <Link href="/" >
             <a className={classes.Skills}>Skills</a>
         </Link>
     )

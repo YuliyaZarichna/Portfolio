@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const contact = () => {
     return (
-        <Link href="/contact" >
+        <Link href="/" >
             <a className={classes.Contact}>Contact</a>
         </Link>
     )
