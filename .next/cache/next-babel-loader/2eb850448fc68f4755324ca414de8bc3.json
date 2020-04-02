@@ -1,1 +1,0 @@
-{"ast":null,"code":"var __jsx = React.createElement;\nimport React from 'react';\nimport Layout from '../components/MyLayout';\n\nconst about = () => __jsx(Layout, null, __jsx(\"p\", null, \"This is the about page\"));\n\nexport default about;","map":null,"metadata":{},"sourceType":"module"}
