@@ -1,0 +1,103 @@
+.Home {
+}
+
+.Content {
+    margin-left: 23%;
+    /* width: 50%; */
+    background-color: #1A1A1A; 
+    border-left: 2px solid white;
+    height: 100vh;
+}
+.Content:before {
+    content: '';
+    width: 100%;
+    height: 40vh;
+    display: block;
+}
+
+/* .Content .Line {
+    position: fixed;
+    border-left: 1px solid gray;
+    height: 100%;
+    top: 0;
+    left: 23%;
+} */
+
+.Content .Welcome {
+    font-size: 5.2vw;
+    margin-bottom: 0;
+    font-family: 'Merienda', cursive;
+    margin-left: 45px;
+    color: white;
+}
+
+.Content .Description {
+    padding-top: 20px;
+    max-width: 400px;
+    width: 58.333333vw;
+    font-size: 13px;
+    font-family: 'Muli', sans-serif;
+    padding-bottom: 49px;
+    margin-left: 45px;
+    color: white;
+}
+
+.Content .socialMedia p {
+    font-family: 'Muli', sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 45px;
+    color: white;
+}
+
+.Content .socialMedia ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 35px;
+}
+
+.Content .socialMedia ul li:first-child{
+    display: inline-block;
+    margin-left: 0;
+}
+
+.Content .socialMedia ul li{
+    display: inline-block;
+}
+
+.Content .socialMedia ul li a{
+    text-decoration: none;
+    color: #CCCCCC;
+    font-family: 'Muli', sans-serif;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.Content .socialMedia ul li a:hover{
+    color: white;
+    opacity: 1;
+}
+
+.Quote {
+    text-align: center;
+    font-size: 12px;
+    font-family: 'Muli', sans-serif;
+    margin-left: 25%;
+    width: 60%;
+    position: fixed;
+    bottom: 10px;
+    color: white;
+}
+
+
+@media only screen and (min-width: 1439px) {
+    .Content {
+        margin-left: 360px
+    }
+    .Content .Welcome {
+        font-size: 74px;
+    }
+   .Content .Line {
+     margin-left: 360px
+    }
+}
