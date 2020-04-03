@@ -2,8 +2,8 @@
 }
 
 .Content {
-    margin-left: 23%;
-    /* width: 50%; */
+    margin-left: 25%;
+    /* position: relative; */
     background-color: #1A1A1A; 
     border-left: 2px solid white;
     height: 100vh;
@@ -11,17 +11,24 @@
 .Content:before {
     content: '';
     width: 100%;
-    height: 40vh;
+    height: 45vh;
     display: block;
 }
 
-/* .Content .Line {
-    position: fixed;
-    border-left: 1px solid gray;
-    height: 100%;
-    top: 0;
-    left: 23%;
-} */
+.Content .Title {
+    position: relative;
+    width: 100%;
+    transform: translate(0,-50%);
+}
+
+.Content .Logo {
+    width: 16.666vw;
+    height: 16.666vw;
+    position: absolute;
+    top: 50%;
+    left: -12.5vw;
+    transform: translate(-50%,-50%);
+}
 
 .Content .Welcome {
     font-size: 5.2vw;
@@ -97,7 +104,22 @@
     .Content .Welcome {
         font-size: 74px;
     }
-   .Content .Line {
-     margin-left: 360px
+   .Content .Logo {
+        left: -180px;
+        
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .Content .Logo {
+        width: 12.5vw;
+        height: 12.5vw
+    }
+ }
+
+@media only screen and (min-width: 540px) {
+   .Content .Logo {
+        width: 20.5vw;
+        height: 20.5vw
     }
 }
