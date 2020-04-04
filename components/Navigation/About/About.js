@@ -3,9 +3,11 @@ import Link from 'next/link';
 
 const about = () => {
     return (
-        <Link href="/about" >
-            <a className={classes.About}>About</a>
-        </Link>
+        <div className={classes.Triangle}>
+            <Link href="/about" >
+                <a className={classes.About}>About</a>
+            </Link>
+        </div>
     )
 }
 

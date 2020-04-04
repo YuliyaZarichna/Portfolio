@@ -1,7 +1,7 @@
 import classes from './Home.module.css'
 import Navigation from '../Navigation/Navigation'
 import Quote from './Quotes/Quotes'
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo2.png'
 
 const home = () => {
     return (

@@ -3,9 +3,11 @@ import Link from 'next/link';
 
 const skills = () => {
     return (
-        <Link href="/" >
-            <a className={classes.Skills}>Skills</a>
-        </Link>
+        <div className={classes.Triangle}>
+            <Link href="/" >
+                <a className={classes.Skills}>Skills</a>
+            </Link>
+        </div>
     )
 }
 
