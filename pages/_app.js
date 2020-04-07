@@ -1,11 +1,16 @@
 import '../styles.css'
 import React from 'react';
-import App, { Container } from 'next/app';
-import Head from 'next/head';
+import Navigation from '../components/Navigation/Navigation'
+
 
 
 function MyApp({ Component, pageProps }) {
-    return <Component {...pageProps} />
+    return (
+        <div className="Content">
+            <Navigation className="SideBar" />
+            <Component {...pageProps} />
+        </div>
+    )
 }
 
 

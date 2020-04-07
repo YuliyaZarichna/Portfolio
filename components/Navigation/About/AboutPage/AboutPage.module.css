@@ -1,0 +1,70 @@
+.Main {
+    background-color: #262626; 
+    border-left: 2px solid white;
+    height: 100vh;
+}
+
+.TitleContent {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 15%;
+    align-items: center;
+}
+
+.Title {
+    justify-content: baseline;
+}
+
+.Greeting {
+    font-size: 3em;
+    margin: 0;
+    font-family: 'Merienda', cursive;
+    color: white;
+}
+
+.Name {
+    font-size: 5em;
+    margin: 0;
+    color: white;
+    font-family: 'Merienda', cursive;
+}
+
+.Foto {
+    width: 10vw;
+    height: 14vw;
+    margin-right: 10%;
+    margin-left: 30px;
+}
+
+.Description {
+    display: block;
+    text-align: right;
+    color: #E6E6E6;
+    width: 55%;
+    float: right;
+    margin-right: 10%;
+    font-family: 'Muli', sans-serif;
+}
+
+.About {
+    font-size: 1.5em;
+}
+
+.Text {
+    text-align: justify;
+}
+
+@media only screen and (min-width: 1439px) {
+    .Main {
+       /*  margin-left: 360px */
+    }
+
+}
+
+@media only screen and (min-width: 1024px) {
+
+ }
+
+@media only screen and (max-width: 540px) {
+
+}

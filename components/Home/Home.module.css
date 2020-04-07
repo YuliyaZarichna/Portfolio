@@ -1,16 +1,19 @@
 .Home {
+ /*    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 95% auto;
+    grid-template-areas: 
+        "side main"
+        "side footer";*/
 }
 
 .Content {
-    margin-left: 25%;
-    /* position: relative; */
+    grid-area: main;
     background-color: #262626; 
     border-left: 2px solid white;
     height: 100vh;
-    /* 
-     */
-
 }
+
 .Content:before {
     content: '';
     width: 100%;
@@ -18,19 +21,10 @@
     display: block;
 }
 
-.Content .Title {
+.Title {
     position: relative;
     width: 100%;
     transform: translate(0,-50%);
-}
-
-.Content .Logo {
-    width: 25.5vw;
-    height: 25.5vw;
-    position: absolute;
-    top: 50%;
-    left: -12.5vw;
-    transform: translate(-50%,-50%);
 }
 
 .Content .Welcome {
@@ -41,17 +35,17 @@
     color: white;
 }
 
-.Content .Description {
+.Description {
     max-width: 400px;
     width: 58.333333vw;
-    font-size: 13px;
+    font-size: 14px;
     font-family: 'Muli', sans-serif;
     padding-bottom: 49px;
     margin-left: 45px;
     color: white;
 }
 
-.Content .socialMedia p {
+.socialMedia p {
     font-family: 'Muli', sans-serif;
     font-weight: bold;
     font-size: 13px;
@@ -59,22 +53,22 @@
     color: white;
 }
 
-.Content .socialMedia ul {
+.socialMedia ul {
     list-style: none;
     padding-left: 0;
     margin-left: 35px;
 }
 
-.Content .socialMedia ul li:first-child{
+.socialMedia ul li:first-child{
     display: inline-block;
     margin-left: 0;
 }
 
-.Content .socialMedia ul li{
+.socialMedia ul li{
     display: inline-block;
 }
 
-.Content .socialMedia ul li a{
+.socialMedia ul li a{
     text-decoration: none;
     color: #CCCCCC;
     font-family: 'Muli', sans-serif;
@@ -82,47 +76,47 @@
     margin-left: 10px;
 }
 
-.Content .socialMedia ul li a:hover{
+.socialMedia ul li a:hover{
     color: white;
     opacity: 1;
 }
 
 .Quote {
+    grid-area: footer;
     text-align: center;
     font-size: 12px;
     font-family: 'Muli', sans-serif;
-    margin-left: 35%;
-    width: 60%;
-    position: fixed;
-    bottom: 10px;
+    background-color: #262626; 
+    border-left: 2px solid white;
+    bottom: 5px; 
     color: white;
 }
 
 
 @media only screen and (min-width: 1439px) {
     .Content {
-        margin-left: 360px
+       /*  margin-left: 360px */
     }
     .Content .Welcome {
         font-size: 74px;
     }
-   .Content .Logo {
+  /*  .Content .Logo {
         left: -180px;  
         width: 20.5vw;
         height: 20.5vw 
-    }
+    } */
 }
 
 @media only screen and (min-width: 1024px) {
-    .Content .Logo {
+  /*   .Content .Logo {
         width: 20.5vw;
         height: 20.5vw 
-    }
+    } */
  }
 
 @media only screen and (max-width: 540px) {
-   .Content .Logo {
+ /*   .Content .Logo {
         width: 20.5vw;
         height: 20.5vw
-    }
+    } */
 }

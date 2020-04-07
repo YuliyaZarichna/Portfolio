@@ -7,7 +7,25 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #E6E6E6
-    ;
+    background-color: #E6E6E6;
+}
 
-}   
+.Content {
+    display: grid;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 95% auto;
+    grid-template-areas: 
+        "side main"
+        "side footer";
+}
+
+.Main {
+    grid-area: main;
+    background-color: #262626; 
+    border-left: 2px solid white;
+    height: 100vh;
+}
+
+.SideBar {
+    grid-area: side;
+}

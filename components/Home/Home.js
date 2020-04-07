@@ -6,11 +6,8 @@ import logo from '../../assets/images/logo2.png'
 const home = () => {
     return (
         <div className={classes.Home}>
-
-            <Navigation />
             <div className={classes.Content}>
                 <div className={classes.Title}>
-                    <img src={logo} className={classes.Logo} alt='logo' />
                     <h1 className={classes.Welcome}>Welcome</h1>
                 </div>
                 <div className={classes.Description}>
