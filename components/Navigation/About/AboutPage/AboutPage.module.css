@@ -16,14 +16,14 @@
 }
 
 .Greeting {
-    font-size: 3em;
+    /* font-size: 3em; */
     margin: 0;
     font-family: 'Merienda', cursive;
     color: white;
 }
 
 .Name {
-    font-size: 5em;
+   /*  font-size: 5em; */
     margin: 0;
     color: white;
     font-family: 'Merienda', cursive;
@@ -47,18 +47,17 @@
 }
 
 .About {
-    font-size: 1.5em;
 }
 
 .Text {
     text-align: justify;
+    font-size: 0.5em; 
 }
 
 @media only screen and (min-width: 1439px) {
     .Main {
        /*  margin-left: 360px */
     }
-
 }
 
 @media only screen and (min-width: 1024px) {

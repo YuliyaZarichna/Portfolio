@@ -8,8 +8,8 @@ const aboutPage = () => {
         <div className={classes.Main}>
             <div className={classes.TitleContent}>
                 <div className={classes.Title}>
-                    <h1 className={classes.Greeting}>Hi there,</h1>
-                    <p className={classes.Name}>I am Yuliya</p>
+                    <h2 className={classes.Greeting}>Hi there,</h2>
+                    <h1 className={classes.Name}>I am Yuliya</h1>
                 </div>
                 <img className={classes.Foto} src={foto} alt="face" />
             </div>
