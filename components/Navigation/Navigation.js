@@ -2,7 +2,7 @@ import classes from './Navigation.module.css'
 import About from './About/About'
 import Skills from './Skills/Skills'
 import Contact from './Contact/Contact'
-import logo from '../../assets/images/logo2.png'
+import logo from '../../assets/images/logoS.png'
 import Link from 'next/link'
 
 const navigation = () => {

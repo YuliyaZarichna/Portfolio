@@ -115,8 +115,7 @@
  }
 
 @media only screen and (max-width: 540px) {
- /*   .Content .Logo {
-        width: 20.5vw;
-        height: 20.5vw
-    } */
+    .Content {
+        border-left: none;
+    }
 }

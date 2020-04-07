@@ -33,3 +33,19 @@ body {
 .SideBar {
     grid-area: side;
 }
+
+@media only screen and (max-width: 540px) {
+
+    .Content {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-areas: 
+        "side"
+        "main"
+        "footer";
+    }
+    .SideBar {
+        grid-area: side;
+        height: 10%;
+    }
+}
