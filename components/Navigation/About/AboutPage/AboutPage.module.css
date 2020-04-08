@@ -12,19 +12,25 @@
 }
 
 .Title {
-    justify-content: baseline;
+
 }
 
 .Greeting {
     margin: 0;
     font-family: 'Merienda', cursive;
     color: white;
+    text-align: right;
 }
 
 .Name {
+    display: inline-flex;
     margin: 0;
     color: white;
     font-family: 'Merienda', cursive;
+}
+
+.Name p::first-letter {
+    color: red;
 }
 
 .Foto {

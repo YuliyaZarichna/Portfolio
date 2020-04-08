@@ -1,0 +1,60 @@
+.Main {
+    background-color: #262626; 
+    border-left: 2px solid white;
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    
+}
+
+.Content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-self: center;
+}
+
+.Title {
+    margin: 0;
+    font-family: 'Merienda', cursive;
+    color: white;
+    text-align: right;
+    width: 60%;
+}
+
+.Text {
+    font-size: 0.5em; 
+    text-align: right;
+    color: #E6E6E6;
+    width: 60%;
+    font-family: 'Muli', sans-serif;
+    text-align: justify;
+}
+
+.Pie {
+    width: 50%;
+    align-self: center;
+}
+
+@media only screen and (max-width: 1024px) {
+    .Main {
+        border-left: none;
+        flex-direction: column;
+    }
+
+    .Content {
+        margin-top:10%
+    }
+
+    .Description {
+        width: 80%;
+    }
+    .Text {
+        font-size: 13px; 
+    }
+
+    .Pie {
+        width: 100%;
+        text-align: -webkit-center;
+       }
+}

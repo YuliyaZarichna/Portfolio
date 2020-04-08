@@ -1,20 +1,13 @@
-import Link from 'next/link';
-import classes from './AboutPage.module.css'
-import foto from '../../../../assets/images/pass.jpg'
+import classes from './SkillsPage.module.css'
+import React from 'react'
+import Pie from '../Pie/Pie'
 
-
-const aboutPage = () => {
+const skillsPage = () => {
     return (
         <div className={classes.Main}>
-            <div className={classes.TitleContent}>
-                <div className={classes.Title}>
-                    <h2 className={classes.Greeting}>Hi there,</h2>
-                    <h1 className={classes.Name}>I am <p style={{ margin: 0, marginLeft: 10 }}>Yuliya</p></h1>
-                </div>
-                <img className={classes.Foto} src={foto} alt="face" />
-            </div>
-            <div className={classes.Description}>
-                <h4 className={classes.About}>About me</h4>
+            <div className={classes.Content}>
+                <h1 className={classes.Title}>Skills</h1>
+
                 <p className={classes.Text}>Currently I`m about to finish my bachelor’s degree in “International Media and Computing”,
                 at HTW Berlin. Studying courses such as Data Structure, Software Engineering,
                 Web Development and Database helped me to gain a good understanding of the programming
@@ -29,8 +22,11 @@ const aboutPage = () => {
                 using React.js and back-end with Node.js, Express.js, MongoDB technologies.
                 </p>
             </div>
+            <div className={classes.Pie}>
+                <Pie />
+            </div>
         </div>
     )
 }
 
-export default aboutPage;
+export default skillsPage;

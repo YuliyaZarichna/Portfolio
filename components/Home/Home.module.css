@@ -27,8 +27,8 @@
     transform: translate(0,-50%);
 }
 
-.Content .Welcome {
-    font-size: 5.2vw;
+.Welcome {
+    /* font-size: 5.2vw; */
     margin-bottom: 0;
     font-family: 'Merienda', cursive;
     margin-left: 45px;
