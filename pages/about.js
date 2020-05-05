@@ -1,12 +1,7 @@
 import React from 'react'
-import Layout from '../components/MyLayout';
-import AboutPage from '../components/Navigation/About/AboutPage/AboutPage'
-
+import AboutPage from '../components/Navigation/About/AboutPage'
 
 const about = () => (
-    /*    <Layout>
-           <AboutPage />
-       </Layout> */
     <AboutPage />
 )
 

@@ -1,17 +1,11 @@
 .Home {
- /*    display: grid;
-    grid-template-columns: 20% auto;
-    grid-template-rows: 95% auto;
-    grid-template-areas: 
-        "side main"
-        "side footer";*/
-}
-
-.Content {
-    grid-area: main;
     background-color: #262626; 
     border-left: 2px solid white;
     height: 100vh;
+}
+
+.Content {
+  
 }
 
 .Content:before {
@@ -87,7 +81,6 @@
     font-size: 12px;
     font-family: 'Muli', sans-serif;
     background-color: #262626; 
-    border-left: 2px solid white;
     bottom: 5px; 
     color: white;
 }

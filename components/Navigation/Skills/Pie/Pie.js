@@ -125,46 +125,46 @@ class Pie extends Component {
     render() {
 
         return (
-            <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 2 }}
-            >
-                <div className={classes.Pie}>
-                    <ResponsivePie
-                        animate={themeSettings.animate == false ? themeSettings.animate : true}
-                        data={data}
-                        margin={{ top: 40, right: 100, bottom: 40, left: 80 }}
-                        pixelRatio={1}
-                        innerRadius={0.05}
-                        padAngle={1}
-                        cornerRadius={45}
-                        colors={getColor}
-                        borderColor={{ from: 'color', modifiers: [['darker', 0.6]] }}
-                        radialLabelsSkipAngle={10}
-                        radialLabelsTextXOffset={6}
-                        radialLabelsTextColor="white"
-                        radialLabelsLinkOffset={0}
-                        radialLabelsLinkDiagonalLength={16}
-                        radialLabelsLinkHorizontalLength={24}
-                        radialLabelsLinkStrokeWidth={1}
-                        /*  radialLabelsLinkColor={{ from: 'color' }} */
-                        radialLabelsLinkColor="white"
-                        slicesLabelsSkipAngle={10}
-                        slicesLabelsTextColor="white"
-                        animate={true}
-                        motionStiffness={90}
-                        motionDamping={15}
-                        sliceLabel="id"
-                        enableRadialLabels={this.state.radialLabels}
-                        enableSlicesLabels={this.state.slicesLabels}
-                        /*      enableRadialLabels={false}
-                                enableSlicesLabels={true} */
-                        isInteractive={false}
-                        onClick={clickHandler}
-                        theme={themeSettings}
-                    />
-                </div>
-            </motion.div>
+            /*   <motion.div
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 2 }}
+              > */
+            <div className={classes.Pie}>
+                <ResponsivePie
+                    animate={themeSettings.animate == false ? themeSettings.animate : true}
+                    data={data}
+                    margin={{ top: 40, right: 100, bottom: 40, left: 80 }}
+                    pixelRatio={1}
+                    innerRadius={0.15}
+                    padAngle={4}
+                    cornerRadius={10}
+                    colors={getColor}
+                    borderColor={{ from: 'color', modifiers: [['darker', 0.6]] }}
+                    radialLabelsSkipAngle={10}
+                    radialLabelsTextXOffset={6}
+                    radialLabelsTextColor="white"
+                    radialLabelsLinkOffset={0}
+                    radialLabelsLinkDiagonalLength={16}
+                    radialLabelsLinkHorizontalLength={24}
+                    radialLabelsLinkStrokeWidth={1}
+                    /*  radialLabelsLinkColor={{ from: 'color' }} */
+                    radialLabelsLinkColor="white"
+                    slicesLabelsSkipAngle={10}
+                    slicesLabelsTextColor="white"
+                    animate={true}
+                    motionStiffness={90}
+                    motionDamping={15}
+                    sliceLabel="id"
+                    enableRadialLabels={this.state.radialLabels}
+                    enableSlicesLabels={this.state.slicesLabels}
+                    /*      enableRadialLabels={false}
+                            enableSlicesLabels={true} */
+                    isInteractive={false}
+                    onClick={clickHandler}
+                    theme={themeSettings}
+                />
+            </div>
+            /*  </motion.div> */
         )
     }
 }

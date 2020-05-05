@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import classes from './AboutPage.module.css'
-import foto from '../../../../assets/images/pass.jpg'
+import foto from '../../../assets/images/pass.jpg'
 
 
 const aboutPage = () => {

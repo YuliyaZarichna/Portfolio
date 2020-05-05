@@ -1,15 +1,21 @@
-.Skills {
+.NavigationItem{
     text-decoration: none;
     color: #262626; 
-   /*  margin-left: -100px; */
-}
+  }
 
 /* effect-shine */
-.Skills:hover {
+.NavigationItem:hover {
     -webkit-mask-image: linear-gradient(-75deg, rgba(0,0,0,.6) 30%, #000 50%, rgba(0,0,0,.6) 70%);
     -webkit-mask-size: 200%;
     animation: shine 2s infinite;
+    color: red;
+    cursor: pointer;
+    
   }
+.NavigationItem a:active,
+.NavigationItem a.active {
+  color: red;
+}
   
   @-webkit-keyframes shine {
     from {
@@ -20,12 +26,3 @@
       -webkit-mask-position: -50%;
     }
   }
-
- /*  .Triangle {
-    width: 0;
-    height: 0;
-    border-top: 50px solid transparent;
-    border-left: 100px solid red;
-    border-bottom: 50px solid transparent;
-    transform: rotate(deg);
-  } */

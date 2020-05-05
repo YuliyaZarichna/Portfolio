@@ -1,5 +1,5 @@
 import classes from './Home.module.css'
-import Navigation from '../Navigation/Navigation'
+import Navigation from '../Navigation/NavigationItems/NavagationItems'
 import Quote from './Quotes/Quotes'
 import logo from '../../assets/images/logo2.png'
 
