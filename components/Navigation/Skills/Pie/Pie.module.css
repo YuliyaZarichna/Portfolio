@@ -1,11 +1,28 @@
 .Pie {
-   height: 22em;
-   width: 22em
+   height: 19em;
+   width: 19em
 }
+
+.SkillsCard {
+   position: absolute;
+   border-radius: 20px;
+   background: #E6E6E6;
+   overflow: hidden;
+   width: 40%;
+   height: 200px;
+   margin-left: 40px;
+   margin-top: 0;
+}
+
+.SkillsList li {
+   list-style: none;
+   padding: 0;
+   margin: 0;
+ }
 
 @media only screen and (max-width: 1024px) {
     .Pie {
-        height: 24em;
-        width: 24em
+        height: 20em;
+        width: 20em
      }
 }

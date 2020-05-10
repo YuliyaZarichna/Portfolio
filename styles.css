@@ -34,7 +34,7 @@ body {
     grid-area: side;
 }
 
-@media only screen and (max-width: 540px) {
+@media only screen and (max-width: 768px) {
 
     .Content {
         display: grid;

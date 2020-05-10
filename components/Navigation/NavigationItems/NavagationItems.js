@@ -8,11 +8,13 @@ import NavigationItem from './NavigationItem/NavigationItem'
 const navigationItems = () => {
     return (
         <div className={classes.SideBar}>
-            <Link href="/">
-                <a>
-                    <img src={logo} className={classes.Logo} alt='logo' />
-                </a>
-            </Link>
+            <div className={classes.Shape}>
+                <Link href="/">
+                    <a>
+                        <img src={logo} className={classes.Logo} alt='logo' />
+                    </a>
+                </Link>
+            </div>
             <div className={classes.NavigationItems}>
                 <NavigationItem link="/about" > About</NavigationItem>
                 <NavigationItem link="/skills" > Skills</NavigationItem>

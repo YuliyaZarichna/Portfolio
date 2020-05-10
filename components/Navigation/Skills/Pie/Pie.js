@@ -1,63 +1,60 @@
 import classes from './Pie.module.css'
 import React, { Component } from 'react'
 import { ResponsivePie } from '@nivo/pie'
-import { motion, MotionContext } from "framer-motion"
-
+import { motion, useMotionValue } from "framer-motion"
 
 
 const data = [
     {
         "id": "React.js",
-        "label": "elixir",
+        "label": "React.js",
         "value": 222,
-        "color": "hsl(0, 0%, 8%)"
+        "experience": "Learn in intership"
     },
     {
         "id": "React-Native",
-        "label": "java",
+        "label": "React-Nativea",
         "value": 280,
-        "color": "hsl(30, 70%, 50%)"
+        "experience": "Bacheror thesis"
     },
     {
         "id": "CSS",
-        "label": "stylus",
+        "label": "CSS",
         "value": 265,
-        "color": "hsl(48, 70%, 50%)"
+        "experience": "Learn in intership"
     },
     {
         "id": "HTML",
-        "label": "java",
+        "label": "HTML",
         "value": 250,
-        "color": "hsl(300, 70%, 50%)"
+        "experience": "Learn in intership"
     }, {
         "id": "Node.js",
-        "label": "java",
+        "label": "Node.js",
         "value": 200,
-        "color": "hsl(300, 70%, 50%)"
+        "experience": "Learn in intership"
     }, {
         "id": "MySQL",
-        "label": "java",
+        "label": "MySQL",
         "value": 190,
-        "color": "hsl(300, 70%, 50%)"
+        "experience": "Learn in intership"
     }, {
         "id": "MongoDB",
-        "label": "java",
+        "label": "MongoDB",
         "value": 250,
-        "color": "hsl(300, 70%, 50%)"
+        "experience": "Learn in intership"
     }, {
         "id": "Rest",
-        "label": "stylus",
+        "label": "Rest",
         "value": 265,
-        "color": "hsl(48, 70%, 50%)"
+        "experience": "Learn in intership"
     }, {
         "id": "JS",
-        "label": "stylus",
+        "label": "JS",
         "value": 100,
-        "color": "hsl(48, 70%, 50%)"
+        "experience": "Learn in intership"
     }]
-const clickHandler = () => {
-    console.log("click");
-}
+
 const colors = {
     "React.js": '#141414',
     'React-Native': 'red',
@@ -74,16 +71,16 @@ const getColor = data => colors[data.id]
 
 const themeSettings = {
     fontFamily: 'Merienda',
-    fontSize: 18,
+    fontSize: 16,
 };
 
 class Pie extends Component {
 
     state = {
         slicesLabels: true,
-        radialLabels: false
+        radialLabels: false,
+        skill: null
     }
-
     componentDidMount() {
         if (window.innerWidth < 1025) {
             this.setState({
@@ -97,7 +94,6 @@ class Pie extends Component {
                 radialLabels: false
             })
         }
-
         window.addEventListener("resize", this.handleSize);
     }
 
@@ -106,13 +102,11 @@ class Pie extends Component {
     }
 
     handleSize = () => {
-        console.log("handle size")
         if (window.innerWidth < 1025) {
             this.setState({
                 slicesLabels: false,
                 radialLabels: true
             })
-            console.log("width", window.innerWidth)
         }
         else if (window.innerWidth > 1024) {
             this.setState({
@@ -122,49 +116,109 @@ class Pie extends Component {
         }
     }
 
+    clickHandler = (data) => {
+        this.setState({
+            skill: (
+                <div className={classes.SkillsCard}>
+                    <ul className={classes.SkillsList}>
+                        <li>
+                            {data.id}
+                        </li>
+                        <li>
+                            {data.experience}
+                        </li>
+                    </ul>
+                </div>
+
+            )
+        })
+    }
+
+
     render() {
+        console.log("skill", this.state.skill)
 
         return (
-            /*   <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 2 }}
-              > */
-            <div className={classes.Pie}>
-                <ResponsivePie
-                    animate={themeSettings.animate == false ? themeSettings.animate : true}
-                    data={data}
-                    margin={{ top: 40, right: 100, bottom: 40, left: 80 }}
-                    pixelRatio={1}
-                    innerRadius={0.15}
-                    padAngle={4}
-                    cornerRadius={10}
-                    colors={getColor}
-                    borderColor={{ from: 'color', modifiers: [['darker', 0.6]] }}
-                    radialLabelsSkipAngle={10}
-                    radialLabelsTextXOffset={6}
-                    radialLabelsTextColor="white"
-                    radialLabelsLinkOffset={0}
-                    radialLabelsLinkDiagonalLength={16}
-                    radialLabelsLinkHorizontalLength={24}
-                    radialLabelsLinkStrokeWidth={1}
-                    /*  radialLabelsLinkColor={{ from: 'color' }} */
-                    radialLabelsLinkColor="white"
-                    slicesLabelsSkipAngle={10}
-                    slicesLabelsTextColor="white"
-                    animate={true}
-                    motionStiffness={90}
-                    motionDamping={15}
-                    sliceLabel="id"
-                    enableRadialLabels={this.state.radialLabels}
-                    enableSlicesLabels={this.state.slicesLabels}
-                    /*      enableRadialLabels={false}
-                            enableSlicesLabels={true} */
-                    isInteractive={false}
-                    onClick={clickHandler}
-                    theme={themeSettings}
-                />
+            <div>
+                {/*   <motion.svg
+                    whileHover="hover"
+                > */}
+                <div className={classes.Pie}>
+                    <ResponsivePie
+                        animate={themeSettings.animate == false ? themeSettings.animate : true}
+                        data={data}
+                        margin={{ top: 40, right: 50, bottom: 40, left: 80 }}
+                        pixelRatio={1}
+                        innerRadius={0.15}
+                        padAngle={4}
+                        cornerRadius={10}
+                        colors={getColor}
+                        borderColor={{ from: 'color', modifiers: [['darker', 0.6]] }}
+                        radialLabelsSkipAngle={10}
+                        radialLabelsTextXOffset={6}
+                        radialLabelsTextColor="white"
+                        radialLabelsLinkOffset={0}
+                        radialLabelsLinkDiagonalLength={16}
+                        radialLabelsLinkHorizontalLength={24}
+                        radialLabelsLinkStrokeWidth={1}
+                        // radialLabelsLinkColor={{ from: 'color' }}
+                        radialLabelsLinkColor="white"
+                        slicesLabelsSkipAngle={10}
+                        slicesLabelsTextColor="white"
+                        animate={true}
+                        motionStiffness={90}
+                        motionDamping={15}
+                        sliceLabel="id"
+                        enableRadialLabels={this.state.radialLabels}
+                        enableSlicesLabels={this.state.slicesLabels}
+                        //enableRadialLabels={false}
+                        //enableSlicesLabels={true}
+                        isInteractive={false}
+                        onClick={this.clickHandler}
+                        theme={themeSettings}
+                        defs={[
+                            {
+                                id: 'dots',
+                                type: 'patternDots',
+                                background: 'inherit',
+                                color: 'rgba(255, 255, 255, 0.3)',
+                                size: 4,
+                                padding: 1,
+                                stagger: true
+                            },
+                            {
+                                id: 'lines',
+                                type: 'patternLines',
+                                background: 'inherit',
+                                color: 'rgba(255, 255, 255, 0.3)',
+                                rotation: -45,
+                                lineWidth: 6,
+                                spacing: 10
+                            }
+                        ]}
+                        fill={[
+                            {
+                                match: {
+                                    id: 'MySQL'
+                                },
+                                id: 'dots'
+                            },
+                            {
+                                match: {
+                                    id: 'React-Native'
+                                },
+                                id: 'dots'
+                            }
+                        ]}
+                    />
+                </div>
+                <div>
+                    {this.state.skill}
+                </div>
+                {/* </motion.svg> */}
+
+
             </div>
-            /*  </motion.div> */
         )
     }
 }
