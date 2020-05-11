@@ -9,50 +9,59 @@ const data = [
         "id": "React.js",
         "label": "React.js",
         "value": 222,
-        "experience": "Learn in intership"
+        "experience": "Learn in intership",
+        "color": '#141414'
     },
     {
         "id": "React-Native",
         "label": "React-Nativea",
         "value": 280,
-        "experience": "Bacheror thesis"
+        "experience": "Bacheror thesis",
+        "color": 'red'
     },
     {
         "id": "CSS",
         "label": "CSS",
         "value": 265,
-        "experience": "Learn in intership"
+        "experience": "Learn in intership",
+        "color": '#141414'
     },
     {
         "id": "HTML",
         "label": "HTML",
         "value": 250,
-        "experience": "Learn in intership"
+        "experience": "Learn in intership",
+        "color": '#999999'
     }, {
         "id": "Node.js",
         "label": "Node.js",
         "value": 200,
-        "experience": "Learn in intership"
+        "experience": "Learn in intership",
+        "color": '#F20D0D'
     }, {
         "id": "MySQL",
         "label": "MySQL",
         "value": 190,
-        "experience": "Learn in intership"
+        "experience": "Learn in intership",
+        "color": '#999999'
     }, {
         "id": "MongoDB",
         "label": "MongoDB",
         "value": 250,
-        "experience": "Learn in intership"
+        "experience": "Learn in intership",
+        "color": "#404040"
     }, {
         "id": "Rest",
         "label": "Rest",
         "value": 265,
-        "experience": "Learn in intership"
+        "experience": "Learn in intership",
+        "color": "red"
     }, {
         "id": "JS",
         "label": "JS",
         "value": 100,
-        "experience": "Learn in intership"
+        "experience": "Learn in intership",
+        "color": '#999999'
     }]
 
 const colors = {
@@ -118,26 +127,28 @@ class Pie extends Component {
 
     clickHandler = (data) => {
         this.setState({
-            skill: (
-                <div className={classes.SkillsCard}>
-                    <ul className={classes.SkillsList}>
-                        <li>
-                            {data.id}
-                        </li>
-                        <li>
-                            {data.experience}
-                        </li>
-                    </ul>
-                </div>
-
-            )
+            skill: data
         })
     }
 
 
     render() {
-        console.log("skill", this.state.skill)
 
+        let skill
+        if (this.state.skill != null) {
+            const myStyle = {
+                background: this.state.skill.color
+            }
+
+            skill = <div className={classes.SkillsCard} style={myStyle}>
+                <ul className={classes.SkillsList}>
+                    <li className={classes.SkillsListTitle}> {this.state.skill.id} </li>
+                    <li> {this.state.skill.experience} </li>
+                </ul>
+            </div>
+        } else {
+            skill = <div> </div>
+        }
         return (
             <div>
                 {/*   <motion.svg
@@ -212,8 +223,9 @@ class Pie extends Component {
                         ]}
                     />
                 </div>
+
                 <div>
-                    {this.state.skill}
+                    {skill}
                 </div>
                 {/* </motion.svg> */}
 

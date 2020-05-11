@@ -1,12 +1,11 @@
 .Pie {
-   height: 19em;
-   width: 19em
+   height: 18em;
+   width: 18em
 }
 
 .SkillsCard {
    position: absolute;
    border-radius: 20px;
-   background: #E6E6E6;
    overflow: hidden;
    width: 40%;
    height: 200px;
@@ -16,8 +15,16 @@
 
 .SkillsList li {
    list-style: none;
+   color: white;
+   font-family: 'Muli', sans-serif;
+   font-size: 18px;
    padding: 0;
    margin: 0;
+ }
+
+ .SkillsListTitle {
+   font-family: 'Merienda' !important;
+   margin-bottom: 10px !important;
  }
 
 @media only screen and (max-width: 1024px) {

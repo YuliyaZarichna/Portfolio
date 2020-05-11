@@ -1,5 +1,5 @@
 import classes from './NavigationItems.module.css'
-import logo from '../../../assets/images/logoS.png'
+import logo from '../../../assets/images/logo3crop.png'
 import Link from 'next/link'
 import NavigationItem from './NavigationItem/NavigationItem'
 
