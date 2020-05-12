@@ -4,66 +4,6 @@ import { ResponsivePie } from '@nivo/pie'
 import { motion, useMotionValue } from "framer-motion"
 
 
-const data = [
-    {
-        "id": "React.js",
-        "label": "React.js",
-        "value": 222,
-        "experience": "Learn in intership",
-        "color": '#141414'
-    },
-    {
-        "id": "React-Native",
-        "label": "React-Nativea",
-        "value": 280,
-        "experience": "Bacheror thesis",
-        "color": 'red'
-    },
-    {
-        "id": "CSS",
-        "label": "CSS",
-        "value": 265,
-        "experience": "Learn in intership",
-        "color": '#141414'
-    },
-    {
-        "id": "HTML",
-        "label": "HTML",
-        "value": 250,
-        "experience": "Learn in intership",
-        "color": '#999999'
-    }, {
-        "id": "Node.js",
-        "label": "Node.js",
-        "value": 200,
-        "experience": "Learn in intership",
-        "color": '#F20D0D'
-    }, {
-        "id": "MySQL",
-        "label": "MySQL",
-        "value": 190,
-        "experience": "Learn in intership",
-        "color": '#999999'
-    }, {
-        "id": "MongoDB",
-        "label": "MongoDB",
-        "value": 250,
-        "experience": "Learn in intership",
-        "color": "#404040"
-    }, {
-        "id": "Rest",
-        "label": "Rest",
-        "value": 265,
-        "experience": "Learn in intership",
-        "color": "red"
-    }, {
-        "id": "JS",
-        "label": "JS",
-        "value": 100,
-        "experience": "Learn in intership",
-        "color": '#999999'
-    }]
-
 const colors = {
     "React.js": '#141414',
     'React-Native': 'red',
@@ -81,6 +21,11 @@ const getColor = data => colors[data.id]
 const themeSettings = {
     fontFamily: 'Merienda',
     fontSize: 16,
+    /*     tooltip: {
+            container: {
+                background: '#333',
+            },
+        }, */
 };
 
 class Pie extends Component {
@@ -88,7 +33,66 @@ class Pie extends Component {
     state = {
         slicesLabels: true,
         radialLabels: false,
-        skill: null
+        skill: null,
+        data: [
+            {
+                "id": "React.js",
+                "label": "React.js",
+                "value": 222,
+                "experience": "Learn in intership",
+                "color": '#141414'
+            },
+            {
+                "id": "React-Native",
+                "label": "React-Nativea",
+                "value": 280,
+                "experience": "Bacheror thesis",
+                "color": 'red'
+            },
+            {
+                "id": "CSS",
+                "label": "CSS",
+                "value": 265,
+                "experience": "Learn in intership",
+                "color": '#141414'
+            },
+            {
+                "id": "HTML",
+                "label": "HTML",
+                "value": 250,
+                "experience": "Learn in intership",
+                "color": '#999999'
+            }, {
+                "id": "Node.js",
+                "label": "Node.js",
+                "value": 200,
+                "experience": "Learn in intership",
+                "color": '#F20D0D'
+            }, {
+                "id": "MySQL",
+                "label": "MySQL",
+                "value": 190,
+                "experience": "Learn in intership",
+                "color": 'black'
+            }, {
+                "id": "MongoDB",
+                "label": "MongoDB",
+                "value": 250,
+                "experience": "Learn in intership",
+                "color": "#404040"
+            }, {
+                "id": "Rest",
+                "label": "Rest",
+                "value": 265,
+                "experience": "Learn in intership",
+                "color": "red"
+            }, {
+                "id": "JS",
+                "label": "JS",
+                "value": 100,
+                "experience": "Learn in intership",
+                "color": '#999999'
+            }]
     }
     componentDidMount() {
         if (window.innerWidth < 1025) {
@@ -131,9 +135,41 @@ class Pie extends Component {
         })
     }
 
+    handleOnMouseEnter = (d, e) => {
+        const newDataValue = d.value + 150
+
+        const newData = [... this.state.data]
+        const target = this.state.data.findIndex(f => {
+            if (f.id === d.id) {
+                f.value = newDataValue
+            }
+        })
+        newData[target] = d
+
+        console.log("newData[target]", newData[target])
+
+        this.setState({ data: newData })
+
+        // console.log({ is: 'mouseenter', data, event: e })
+    }
+    handleOnMouseLeave = (d, e) => {
+        const newDataValue = d.value - 150
+
+        const newData = [... this.state.data]
+        const target = this.state.data.findIndex(f => {
+            if (f.id === d.id) {
+                f.value = newDataValue
+            }
+        })
+        newData[target] = d
+
+        console.log("newData[target]", newData[target])
+
+        this.setState({ data: newData })
+        //  console.log({ is: 'mouseleave', data, event: e })
+    }
 
     render() {
-
         let skill
         if (this.state.skill != null) {
             const myStyle = {
@@ -146,8 +182,6 @@ class Pie extends Component {
                     <li> {this.state.skill.experience} </li>
                 </ul>
             </div>
-        } else {
-            skill = <div> </div>
         }
         return (
             <div>
@@ -157,7 +191,8 @@ class Pie extends Component {
                 <div className={classes.Pie}>
                     <ResponsivePie
                         animate={themeSettings.animate == false ? themeSettings.animate : true}
-                        data={data}
+                        //animate={true}
+                        data={this.state.data}
                         margin={{ top: 40, right: 50, bottom: 40, left: 80 }}
                         pixelRatio={1}
                         innerRadius={0.15}
@@ -186,6 +221,8 @@ class Pie extends Component {
                         //enableSlicesLabels={true}
                         isInteractive={false}
                         onClick={this.clickHandler}
+                        onMouseEnter={this.handleOnMouseEnter}
+                        onMouseLeave={this.handleOnMouseLeave}
                         theme={themeSettings}
                         defs={[
                             {
