@@ -117,14 +117,12 @@ class Pie extends Component {
     handleSize = () => {
         if (window.innerWidth < 1025) {
             this.setState({
-                slicesLabels: false,
-                radialLabels: true
+                slicesLabels: false, radialLabels: true
             })
         }
         else if (window.innerWidth > 1024) {
             this.setState({
-                slicesLabels: true,
-                radialLabels: false
+                slicesLabels: true, radialLabels: false
             })
         }
     }
@@ -136,37 +134,23 @@ class Pie extends Component {
     }
 
     handleOnMouseEnter = (d, e) => {
-        const newDataValue = d.value + 150
+        //console.log({ is: 'mouseenter', d, event: e.target })
+        //e.target.style.visibility = 'hidden';
+        e.target.classList.toggle('active')
 
-        const newData = [... this.state.data]
-        const target = this.state.data.findIndex(f => {
-            if (f.id === d.id) {
-                f.value = newDataValue
-            }
-        })
-        newData[target] = d
+        const target = this.state.data.findIndex(f => f.id === d.id)
 
-        console.log("newData[target]", newData[target])
+        document.getElementsByTagName("text")
+        [target].classList.toggle("active")
 
-        this.setState({ data: newData })
-
-        // console.log({ is: 'mouseenter', data, event: e })
     }
     handleOnMouseLeave = (d, e) => {
-        const newDataValue = d.value - 150
+        e.target.classList.toggle('active')
+        const target = this.state.data.findIndex(f => f.id === d.id)
 
-        const newData = [... this.state.data]
-        const target = this.state.data.findIndex(f => {
-            if (f.id === d.id) {
-                f.value = newDataValue
-            }
-        })
-        newData[target] = d
+        document.getElementsByTagName("text")
+        [target].classList.toggle("active")
 
-        console.log("newData[target]", newData[target])
-
-        this.setState({ data: newData })
-        //  console.log({ is: 'mouseleave', data, event: e })
     }
 
     render() {
@@ -176,15 +160,21 @@ class Pie extends Component {
                 background: this.state.skill.color
             }
 
-            skill = <div className={classes.SkillsCard} style={myStyle}>
+            skill = <motion.div
+                animate={{ scale: 2 }}
+                transition={{ duration: 0.5 }}
+                className={classes.SkillsCard} style={myStyle}
+            >
+
                 <ul className={classes.SkillsList}>
                     <li className={classes.SkillsListTitle}> {this.state.skill.id} </li>
                     <li> {this.state.skill.experience} </li>
                 </ul>
-            </div>
+
+            </motion.div>
         }
         return (
-            <div>
+            <div className={classes.PieWithDescript}>
                 {/*   <motion.svg
                     whileHover="hover"
                 > */}
@@ -265,8 +255,6 @@ class Pie extends Component {
                     {skill}
                 </div>
                 {/* </motion.svg> */}
-
-
             </div>
         )
     }
