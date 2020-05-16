@@ -10,11 +10,10 @@
 }
 
 .SkillsCard {
-   position: absolute;
+   /* position: absolute; */
    border-radius: 20px;
    overflow: hidden;
-    width: 20%;
-  /* height: 100px; */
+  /*  width: 200px;  */
    margin-top: 30px;
    transition: background-color 0.3s ease-out;
 }

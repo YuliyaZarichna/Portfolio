@@ -251,9 +251,9 @@ class Pie extends Component {
                     />
                 </div>
 
-                <div>
-                    {skill}
-                </div>
+
+                {skill}
+
                 {/* </motion.svg> */}
             </div>
         )
